@@ -43,12 +43,28 @@ class ShopProvider extends Component {
         })
     }
 
-    addItemtoCheckout = async () => {
-
-    }
+    addItemToCheckout = async (variantId, quantity) => {
+        const lineItemsToAdd = [
+        {
+                variantId,
+            quantity: parseInt(quantity, 10), //base to the 10
+        },
+        ];
+        const checkout = await client.checkout.addLineItems(
+        this.state.checkout.id,
+        lineItemsToAdd
+        );
+        this.setState({
+            checkout: checkout
+        });
+        this.openCart();
+    };
 
     removeLineItem = async (lineIds) => {
+        const checkoutId = this.state.checkout.id
 
+        client.checkout.removeLineItems(checkoutId, lineIds)
+        .then(checkout => this.setState({ checkout }))
     }
 
     //fetch all shopify products
@@ -68,8 +84,8 @@ class ShopProvider extends Component {
 
     closeCart = () => { this.setState({ isCartOpen: false})}
     openCart = () => { this.setState({ isCartOpen: true})}
-    closeMenu = () => { }
-    openMenu = () => { }
+    closeMenu = () => { this.setState({ isMenuOpen: false })}
+    openMenu = () => { this.setState({ isMenuOpen: true })}
 
 
     render() {
@@ -83,7 +99,7 @@ class ShopProvider extends Component {
                     closeMenu: this.closeMenu,
                     openMenu: this.openMenu,
                     removeLineItem: this.removeLineItem,
-                    addItemtoCheckout: this.addItemtoCheckout
+                    addItemToCheckout: this.addItemToCheckout
                 }}>
                     {this.props.children}
                 </ShopContext.Provider>
