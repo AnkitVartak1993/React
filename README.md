@@ -5,8 +5,9 @@ App is a basic utilization of react and chakra ui along with consumption of shop
 1) Shopify api setup and consumption
 2) Use of State, Context, useEffect, Routing and react hooks
 3) Chakra UI 
+4) Boilerplate code for Navigation Menu and Navigation Bar for future use
 
-##Requirements to run the app
+## Requirements to run the app
 1) Create an account and dev project on shopify api site
 2) Generate api token key and url on shopify api site
 3) create .env file in root folder and add envrionment variables REACT_APP_SHOPIFY_API, REACT_APP_SHOPIFY_DOMAIN
