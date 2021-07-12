@@ -1,5 +1,16 @@
 # App Information 
-App is a basic utilization of react and chakra ui along with consumption shopify api
+App is a basic utilization of react and chakra ui along with consumption of shopify api
+
+## Things to look for
+1) Shopify api setup and consumption
+2) Use of State, Context, useEffect, Routing and react hooks
+3) Chakra UI 
+
+##Requirements to run the app
+1) Create an account and dev project on shopify api site
+2) Generate api token key and url on shopify api site
+3) create .env file in root folder and add envrionment variables REACT_APP_SHOPIFY_API, REACT_APP_SHOPIFY_DOMAIN
+4) Run it as a normal React app
 
 # Getting Started with Create React App
 
