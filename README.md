@@ -1,3 +1,6 @@
+# App Information 
+App is a basic utilization of react and chakra ui along with consumption shopify api
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
